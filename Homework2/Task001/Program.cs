@@ -4,18 +4,14 @@
 456 -> 5
 782 -> 8
 918 -> 1
-
-
-
-
 */
-
-Console.WriteLine("Введите трёхзначное число");
+Console.WriteLine("Выделим из трёхзначного числа вторую цифру");
+Console.WriteLine("Введите число");
 
 int number = int.Parse(Console.ReadLine());
-
-int number_a = number % 1000;
-Console.WriteLine(number_a);
-int number_b = number_a % 10;
+int number_a = number % 100;
+//Console.WriteLine(number_a);
+int number_b = number_a / 10;
+Console.Write("Вторая цифра = ");
 Console.WriteLine(number_b);
 
