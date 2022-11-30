@@ -3,3 +3,7 @@
 //645 -> 5  
 //78 -> третьей цифры нет
 //32679 -> 6
+
+Console.WriteLine("Задайте любое число");
+int number = int.Parse(Console.ReadLine());
+Console.WriteLine(number);
