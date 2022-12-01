@@ -5,12 +5,15 @@
 
 Console.WriteLine("Сегодня выходной?");
 Console.WriteLine("Ведите число от 1 до 7");
-int day = int.Parse(Console.ReadLine());
+bool isParsed = int.TryParse(Console.ReadLine(), out int day);
+if(!isParsed){
+    Console.WriteLine("Вы ввели буквы или что-то ещё, надо числа");
+}
 if ( day==6 | day ==7){
         Console.WriteLine("Поздравляю! Выходной!");
     }
 if (day < 0 | day > 7){
-    Console.WriteLine("Вы ввели число не корретно");
+    Console.WriteLine($"Вы ввели число = {day} не корретно, надо от 1 до 7!");
 }
 
 if ( day> 0 & day < 6){
