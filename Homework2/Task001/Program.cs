@@ -10,7 +10,7 @@ Console.WriteLine("Введите число");
 
 int number = int.Parse(Console.ReadLine());
 int number_a = number % 100;
-//Console.WriteLine(number_a);
+Console.WriteLine(number_a);
 int number_b = number_a / 10;
 Console.Write("Вторая цифра = ");
 Console.WriteLine(number_b);
