@@ -8,55 +8,58 @@
 
 
 Console.WriteLine("Введите пятизначное число и проверим, является ли оно палиндромом.");
-bool isParsed = int.TryParse(Console.ReadLine(), out int number);
-if(!isParsed){
-    Console.WriteLine("Вы ввели что-то некорректное, надо числа согласно условию задачи.");
-      
-}
-Console.WriteLine(number);
-//d2= (х2— х1)2+ (y2— y1)2.
-//Для отрезка AB в трехмерном пространстве она имеет вид: d = x b - x a 2 + y b - y a 2 + z b - z a 2
-// dooble GetLengthSsegment()
-// {
+int number = InputNumber();
+String palindrom = CalculatePalindromicNumber(number);
+PrintArr();
 
 
 
-    
-// }
-   
-//     //int number_a = number;
-//     // while(number >10){
-//     //     number =number/10;
-//     //     Console.WriteLine(number);
-
-//      // for(int i=0; i<array.Length;i++){
-//     //     i = number/10;
-//     //     Console.WriteLine(i);  
-//     // }
-
-int [] array =  {2,3,8,989,};
-Console.WriteLine(array[2]);
-///int [] array = new int[number];
-    for(int i =0; array.Length < 0;i++){       
-        number=number/10;
-        Console.WriteLine(i);
-        int number_a = number%10;
-        
-        Console.WriteLine(number);
+String  CalculatePalindromicNumber(int number){
+  if (number<10000){
+       return ("Число меньше пяти цифр");
     }
-// Console.WriteLine(array.[3]);
+   if(number>100000){
+    return("В числе больше пяти цифр");
+
+   } 
+int number_a = 0;
+int i=0;
+int[] arr = new int[5];
+while (number > 10)
+{
+    number_a = number%10;
+    number = number/10;
+    arr[i]= number_a;
+        if(number <10){
+        arr[i+1]=number;
+    }
+    i=i+1;
+}
+if(arr[0]==arr[4] &&arr[1]==arr[3]) {
+    return ("число является палиндромом");
     
-//int[] Palindrome = SplittingNumberDigits 
+}
+else{
+    return ("Число не является палиндромом");
+}
+}
 
 
-//  int[] SplittingNumberDigits(number);
-//  int [] array = new int[SplittingNumberDigits] {
-//     for (int i=0; i<array.Length; i++){
-//         i
-//     }
-//  }
-
-
-
-
-//Console.WriteLine(number);
+ void PrintArr()
+{
+     Console.WriteLine(palindrom);  
+}
+int InputNumber()
+{
+    Console.WriteLine("Введите число");
+bool isParsedAX = int.TryParse(Console.ReadLine(), out int number);
+if(isParsedAX)
+{
+   return (number);
+}
+ else
+{
+    Console.WriteLine("Ошибка ввода, надо цифры");
+    return -1;
+}
+}

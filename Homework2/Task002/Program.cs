@@ -15,10 +15,10 @@ if (number > 99 & number <=1000) Console.WriteLine($"Третья цифра={nu
 if (number < 0) Console.WriteLine($"Вы ввели отрицательнле число ={number}. Надо положительное!");
 while ( number > 1000)
 {
-   number = (number-1) /10;
+   number = number /10;
   //Console.WriteLine(number);
   if(number < 1000) Console.WriteLine( $"Третья цифра={number % 10} от введённого пользователем числа");
-  number = number +1;
+ 
   //return (number_a);
  
 }
