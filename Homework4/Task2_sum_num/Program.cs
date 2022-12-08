@@ -1,4 +1,10 @@
-﻿Console.WriteLine("Введите число. Узнаем сумму цифр введёного числа");
+﻿// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+
+
+Console.WriteLine("Введите число. Узнаем сумму цифр введёного числа");
 int numberA = CheckingInputOfNumbers();
 int sumDigitsNumber = CalculateSumOfDigitsOfNumber();
 
