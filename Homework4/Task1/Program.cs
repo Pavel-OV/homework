@@ -9,25 +9,25 @@
 Console.WriteLine("Принимает на вход два числа A и B и возводит число A в натуральную степень B");
 int numberA = CheckingInputOfNumbers();
 int numberB = CheckingInputOfNumbers();
+int resultNumberDegree = RaisesNumberDegree();
+Method();
 
-// 5int index =1;
+int RaisesNumberDegree()
+{
 int result =1;
-//  while (index <= numberB){
-//     result = numberA*result;
-//     index=index+1 ;
-//  }
 for(int i =1; i <=numberB;  i++){
     result= numberA*result;
-    Method();
+   }
+   
+return (result);
 }
-void Method()
+
+ void Method()
 {
  
-    Console.WriteLine(result);
+ Console.WriteLine($" Число {numberA} в степени {numberB} ={resultNumberDegree}");
+    
 }
-
-
-
 
  int CheckingInputOfNumbers(){
  bool isNumberA = int.TryParse(Console.ReadLine(), out int numberA);
