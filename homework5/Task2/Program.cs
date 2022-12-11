@@ -9,13 +9,17 @@ Console.WriteLine("Одномерный массив, заполненный с�
 Console.WriteLine("Найдите сумму элементов, стоящих на нечётных индексах");
 int [] arrayOfRandomNumbers = GeneratingArrayOfRandomNumbers();
 int sumElementsOddIndexes =CountSumOfElementsOfOddIndexes();
-Console.WriteLine($"Сумма нечётных элементов = {sumElementsOddIndexes}");
+Method();
 PrintArr(arrayOfRandomNumbers);
 
 
 
 
-
+void Method()
+{
+ 
+ Console.WriteLine($"Сумма нечётных элементов = {sumElementsOddIndexes}");
+}
 
 
 

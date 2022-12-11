@@ -7,12 +7,15 @@ Console.WriteLine("Задайте массив вещественных чисе
 Console.WriteLine("Найдите разницу между максимальным и минимальным элементов массива.");
 int [] arrayOfRandomNumbers = GeneratingArrayOfRandomNumbers();
 int differenceMaximumMinimumElements = FindDiferenceMaximumMinimumElements();
-Console.WriteLine("Разница между максимальным и минимальным элементов массива");
+Method();
+
+
+
+void Method()
+{
+  Console.WriteLine("Разница между максимальным и минимальным элементов массива");
 Console.WriteLine(differenceMaximumMinimumElements);
-
-
-
-
+}
 
 
 
@@ -50,9 +53,7 @@ for(int i=2; i<arrayOfRandomNumbers.Length; i++){
 }
 return(maxArray - minArray);
 }
-// Console.WriteLine($"Минимальное значение массива={minArray},Максимальное значение массива={maxArray}");
-// Console.WriteLine($"Разница между мин и мах {maxArray-minArray}");
-// Console.WriteLine($"{minArray},{maxArray}");
+
 // dotnet new classlib --name Common
 // dotnet add reference /Users/a2/Lessons/Common/Common.csproj
 // dotnet add reference путь до csproj проекта который вы добавили

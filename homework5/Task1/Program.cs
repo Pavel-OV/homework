@@ -2,12 +2,19 @@
 // Напишите программу, которая покажет количество чётных чисел в массиве.
 
 // [345, 897, 568, 234] -> 2
-Console.WriteLine("Задайть массив заполненный случайными положительными трёхзначными числами");
-Console.WriteLine(" Посчитать количество чётных чисел в массиве.");
+Method();
 int [] arrayOfRandomNumbers = GeneratingArrayOfRandomNumbers();
 PrintArr(arrayOfRandomNumbers);
 int counterOfEvenNumbers= CountingEvenNumbers();
 Console.WriteLine($"Количество чётных чисел в массиве = {counterOfEvenNumbers}");
+
+
+void Method(){
+Console.WriteLine("Задайть массив заполненный случайными положительными трёхзначными числами.");
+Console.WriteLine(" Посчитать количество чётных чисел в массиве.");
+
+}
+
 
 int CountingEvenNumbers(){
 int counterOfEvenNumbers=0;
