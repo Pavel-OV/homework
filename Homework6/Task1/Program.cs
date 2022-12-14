@@ -7,24 +7,26 @@
 //usinq  Common;
 
 Console.WriteLine("Введите  c клавиатуры 5 чисел");
-int [] array = new int [5];
-int count=0;
-for(int i=0; i<array.Length; i++ )
-{
-    bool isParsed = int.TryParse(Console.ReadLine(), out int number );
-    if(!isParsed)
-    {
-        Console.WriteLine("Вы ввели неправильно! Остановимся на этом.");
-        break;
+int [] array = InputArray();
+
+int [] InputArray(){
+    int [] array = new int [5];
+    for(int i=0; i<array.Length; i++ )
+        {
+        bool isParsed = int.TryParse(Console.ReadLine(), out int number );
+        if(!isParsed)
+        {
+            Console.WriteLine("Вы ввели неправильно! Остановимся на этом.");
+            break;
+        }
+     array[i] = number;
     }
-    array[i] = number;
-    if(number > 0)  
-    {
-        count=count+1;
-    }
+ return(array);
 }
+
+    
 PrintArr(array);
-Console.Write($"-> {count}");
+// Console.Write($"-> {count}");
 
 
 
@@ -34,11 +36,17 @@ Console.Write($"-> {count}");
 
 
 int [] PrintArr(int [] array){
+    int count=0;
     Console.Write("[");
     for(int i=0; i<array.Length;i++){
          Console.Write($"{array[i]},");
+    if(array[i] > 0)  
+    {
+        count=count+1;
     }
-    Console.Write("]");
+    }
+    Console.Write("]-> ");
+    Console.WriteLine(count);
 return (array);
 }
 // int [] GeneratingArrayOfRandomNumbers(){
