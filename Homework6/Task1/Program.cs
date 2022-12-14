@@ -26,7 +26,6 @@ int [] InputArray(){
 
     
 PrintArr(array);
-// Console.Write($"-> {count}");
 
 
 
@@ -49,14 +48,3 @@ int [] PrintArr(int [] array){
     Console.WriteLine(count);
 return (array);
 }
-// int [] GeneratingArrayOfRandomNumbers(){
-// int [] arrayOfRandomNumbers = new int [9];
-// for (int index=0; index<arrayOfRandomNumbers.Length;index++) {
-// Random random = new Random();
-// int rnd=random.Next(100,1000);
-// arrayOfRandomNumbers[index]=rnd;
-// //Console.Write($"{index}={rnd} ");
-// //Console.WriteLine(array[index]);
-// }
-// return(arrayOfRandomNumbers);
-// }
