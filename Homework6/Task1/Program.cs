@@ -4,26 +4,27 @@
 
 // 1, -7, 567, 89, 223-> 3
 
-// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+//usinq  Common;
 
-// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
-
-Console.WriteLine("Введите  c клавиатуры 7 чисел");
+Console.WriteLine("Введите  c клавиатуры 5 чисел");
 int [] array = new int [5];
 int count=0;
-for(int i=0; i<array.Length; i++ ){
+for(int i=0; i<array.Length; i++ )
+{
     bool isParsed = int.TryParse(Console.ReadLine(), out int number );
-if(!isParsed){
-    Console.WriteLine("Вы ввели неправильно!");
-}
-array[i] = number;
-if(number > 0){
-    count=count+1;
-}
-
+    if(!isParsed)
+    {
+        Console.WriteLine("Вы ввели неправильно! Остановимся на этом.");
+        break;
+    }
+    array[i] = number;
+    if(number > 0)  
+    {
+        count=count+1;
+    }
 }
 PrintArr(array);
-Console.WriteLine($"вы ввели больше 0  {count} раза");
+Console.Write($"-> {count}");
 
 
 
