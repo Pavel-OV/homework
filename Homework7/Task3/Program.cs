@@ -7,6 +7,8 @@
 // 5 9 2 3
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+Console.WriteLine("Двумерный массив из целых чисел.");
+Console.WriteLine("Найти среднее арифметическое элементов в каждом столбце.");
 int i = InputNumber();
 int j = InputNumber();
 int [,] array = CreateRandom2DArray(i,j);
@@ -21,6 +23,12 @@ for(int q=0; q<array.GetLength(1); q++)
             }
         Console.Write($" {q}={sumArithmeticMean/2}");
     }
+
+
+
+
+
+
 // int[] array2= new int[3]{1,8,4};
 // string str = string.Join(",",array2);
 // Console.WriteLine(str);
