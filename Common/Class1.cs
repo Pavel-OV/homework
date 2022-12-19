@@ -63,3 +63,9 @@ public static class Class1
 //     }
 //     Console.WriteLine("Не удалось распознать число, попробуйте еще раз.");
 // }
+// void Method()
+// {
+ 
+//  Console.WriteLine($" Число {numberA} в степени {numberB} ={resultNumberDegree}");
+    
+// }
