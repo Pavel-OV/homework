@@ -1,7 +1,7 @@
 ﻿namespace Common;
 public static class Class1
 {
-
+// печать одномерного массива с сохранием данных и выводом из метода.
     static int [] PrintArr(int [] array)
     {
         Console.Write("[");
@@ -12,6 +12,7 @@ public static class Class1
         Console.Write("]");
         return (array);
     }
+//Печать двухмерного массива на экран без сохрания.
 
     public static void Print2DArray(int [,] array)
     {
@@ -41,6 +42,16 @@ public static class Class1
     }
 
 }
+// Кортеж
+// (int,int) GetSomethinq()                               
+//  {
+//     int a=5;
+//     int b=4;
+//     return(a,b);
+//  }
+//  (int, int) coordinates = GetSomethinq();
+//  Console.WriteLine(coordinates.Item1);
+//  Console.WriteLine(coordinates.Item2);
 // while (true)
 // {
 //     Console.Write("Введите число: ");
