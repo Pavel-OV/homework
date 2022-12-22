@@ -12,11 +12,44 @@
 // 8 4 2 4
 
 // 5 2 6 7
+int columsNumber =InputNumber();
+int rowsNumber = InputNumber();
 
-int j= InputNumber();
-int i =InputNumber();
-int[,] array = CreateRandom2DArray(i,j);
+int[,] array = CreateRandom2DArray(rowsNumber,columsNumber);
 Print2DArray(array);
+int RowsMin=0;
+int sumRowsMin=GetSumRows(array,0);
+
+
+for(int i=1; i<array.GetLength(0); i++)
+{
+    int sumRows = GetSumRows(array, i);
+    for(int j=0; j<array.GetLength(1); j++)
+    {
+        if(sumRows<sumRowsMin)
+        {
+            sumRowsMin=sumRows;
+            RowsMin=i;
+        }
+    }
+
+
+}
+Console.WriteLine($"Номер строки{RowsMin+1}-> с минимальной суммой{sumRowsMin}");
+
+
+
+int GetSumRows(int[,] array, int i)
+{
+    int rows=array[i,0];
+    for(int j=1; j<array.GetLength(1);j++)
+    {
+        rows+=array[i,j];
+
+    }
+   
+    return rows;
+}
 
 void Print2DArray(int [,] array)
     {
@@ -31,21 +64,20 @@ void Print2DArray(int [,] array)
     }
 
 
-    int [,] CreateRandom2DArray(int countRows, int  countColums)
+    int [,] CreateRandom2DArray(int rowsNumber, int  countColums)
     {
         Random random = new Random();
         
-        int [,] array = new int [countRows,countColums];
+        int [,] array = new int [rowsNumber,countColums];
         for(int i=0; i<array.GetLength(0); i++)
         {
-            int sum=0;
             for(int j=0; j<array.GetLength(1); j++)
 
             {
-                array[i,j] = random.Next(1,31);
-                sum = sum+array[i,j];
+                array[i,j] = random.Next(1,11);
+                //sum = sum+array[i,j];
             }
-             Console.WriteLine(sum);
+             //Console.WriteLi(sum);
    
         }
         return  array;
@@ -55,9 +87,10 @@ void Print2DArray(int [,] array)
 int InputNumber()
 {
     Console.Write("Введите  число ");
-    while (!int.TryParse(Console.ReadLine(), out i))
+    while (!int.TryParse(Console.ReadLine(), out rowsNumber))
     {
         Console.Write("Ошибка ввода! Введите целое число ");
     }
-    return(i);
+    return(rowsNumber);
 }
+
