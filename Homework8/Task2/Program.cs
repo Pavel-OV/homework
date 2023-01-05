@@ -17,7 +17,7 @@ int rowsNumber = InputNumber();
 
 int[,] array = CreateRandom2DArray(rowsNumber,columsNumber);
 Print2DArray(array);
-int RowsMin=0;
+int rowsMin=0;
 int sumRowsMin=GetSumRows(array,0);
 
 
@@ -29,13 +29,13 @@ for(int i=1; i<array.GetLength(0); i++)
         if(sumRows<sumRowsMin)
         {
             sumRowsMin=sumRows;
-            RowsMin=i;
+            rowsMin=i;
         }
     }
 
 
 }
-Console.WriteLine($"Номер строки{RowsMin+1}-> с минимальной суммой{sumRowsMin}");
+Console.WriteLine($"Номер строки{rowsMin+1}-> с минимальной суммой{sumRowsMin}");
 
 
 

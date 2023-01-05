@@ -10,7 +10,7 @@ int rowsNumber =InputNumber();
 int verticalColumn =InputNumber();
 Console.WriteLine("Первое число массива");
 int[,,] array = CreateRandom2DArray( rowsNumber, countColums,verticalColumn);
-Print2DArray(array);
+Print3DArray(array);
 int [,,] array3D = new int [rowsNumber,countColums,verticalColumn];
         
         for(int i=0; i<array.GetLength(0); i++)
@@ -20,52 +20,17 @@ int [,,] array3D = new int [rowsNumber,countColums,verticalColumn];
                 for(int v=0; v<array.GetLength(2); v++)
                     {
                        array3D[i,j,v]=array[i,j,v];
-                                                                         
+                      
+                                                             
 
                     }
             }
         }
-
+/
 Console.WriteLine();
 
-for(int i=0; i<array3D.GetLength(0); i++)
-        {
-            for(int j=0; j<array3D.GetLength(1); j++)
-            {
-                for(int v=0; v<array3D.GetLength(2); v++)
-                    {
-                        int tempNumber=array3D[i,j,1];
-                        
-                        for(int q=0; q<array.GetLength(0); q++)
-                            {
-                               
-                                for(int w=0; w<array.GetLength(1);w++)
-                                {
-                                    int numberA= array[q,w,e];
-                                            if(tempNumber==numberA){
-                                                tempNumber= numberA+1;
-                                                array3D[i,j,v]=tempNumber;
-                                            }
 
-                                   
-                                   
-                                    for(int e=0; e<array.GetLength(2); e++);
-                                    //     {
-                                            
-                                    //             //array3D[i,j,v]=array3D[0,0,0];
-                                                
-                                    //         }
-                                    //     }
-                                }
-                            }
-                   
-
-                    }
-            }
-        }
-
-
-Print2DArray(array3D);
+Print3DArray(array3D);
 
 
 int [,,] CreateRandom2DArray(int countRows, int  countColums, int verticalColumn)
@@ -90,7 +55,7 @@ int [,,] CreateRandom2DArray(int countRows, int  countColums, int verticalColumn
           
 
 
-    void Print2DArray(int [,,] array)
+    void Print3DArray(int [,,] array)
     {
         for(int i=0; i<array.GetLength(0); i++)
         {
