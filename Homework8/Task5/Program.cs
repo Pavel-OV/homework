@@ -22,11 +22,11 @@ while (number <= spiral.GetLength(0) * spiral.GetLongLength(1))
     {
         colums++;
     }
-    else if (rows > colums && rows + colums < spiral.GetLength(1) - 1)
+    else if (rows > colums && rows + colums >= spiral.GetLength(1) - 1)
     {
         rows = rows + 1;
     }
-    else if (rows >= colums && rows + colums < spiral.GetLength(0) - 1)
+    else if (rows >= colums && rows + colums > spiral.GetLength(0) - 1)
     {
         colums--;
     }

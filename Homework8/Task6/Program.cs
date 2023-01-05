@@ -7,8 +7,6 @@
 
 int rowsNumber = InputNumber();
 int columsNumber = rowsNumber;
-//int [,] array = CreateRandom2DArray(rowsNumber,columsNumber);
-
 int[,] zmey = new int[rowsNumber, columsNumber];
 int number = 1;
 int rows = 0;
@@ -23,7 +21,7 @@ while (number <= zmey.GetLength(0) * zmey.GetLongLength(1))
     {
         colums = colums + 1;
     }
-    else if (rows < colums && rows + colums >=zmey.GetLength(0) - 1)
+    else if (rows < colums && rows + colums >= zmey.GetLength(0) - 1)
     {
         rows = rows + 1;
     }
@@ -49,14 +47,14 @@ void Print2DArray(int[,] array)
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
-        if (array[i,j]<10)
-        {
-            Console.Write($"0{array[i, j]} ");
-        }
-        else
-        {
-            Console.Write($"{array[i, j]} ");
-        }
+            if (array[i, j] < 10)
+            {
+                Console.Write($"0{array[i, j]} ");
+            }
+            else
+            {
+                Console.Write($"{array[i, j]} ");
+            }
         Console.WriteLine();
     }
 }

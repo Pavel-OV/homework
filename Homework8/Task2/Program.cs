@@ -12,76 +12,81 @@
 // 8 4 2 4
 
 // 5 2 6 7
-int columsNumber =InputNumber();
+int columsNumber = InputNumber();
 int rowsNumber = InputNumber();
 
-int[,] array = CreateRandom2DArray(rowsNumber,columsNumber);
+int[,] array = CreateRandom2DArray(rowsNumber, columsNumber);
 Print2DArray(array);
-int rowsMin=0;
-int sumRowsMin=GetSumRows(array,0);
+int rowsMin = 0;
+int sumRowsMin = GetSumRows(array, 0);
 
 
-for(int i=1; i<array.GetLength(0); i++)
+for (int i = 1; i < array.GetLength(0); i++)
 {
     int sumRows = GetSumRows(array, i);
-    for(int j=0; j<array.GetLength(1); j++)
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-        if(sumRows<sumRowsMin)
+        if (sumRows < sumRowsMin)
         {
-            sumRowsMin=sumRows;
-            rowsMin=i;
+            sumRowsMin = sumRows;
+            rowsMin = i;
         }
     }
 
 
 }
-Console.WriteLine($"Номер строки{rowsMin+1}-> с минимальной суммой{sumRowsMin}");
+Console.WriteLine($"Номер строки{rowsMin + 1}-> с минимальной суммой {sumRowsMin}");
 
 
 
 int GetSumRows(int[,] array, int i)
 {
-    int rows=array[i,0];
-    for(int j=1; j<array.GetLength(1);j++)
+    int rows = array[i, 0];
+    for (int j = 1; j < array.GetLength(1); j++)
     {
-        rows+=array[i,j];
+        rows = rows + array[i, j];
 
     }
-   
+
     return rows;
 }
 
-void Print2DArray(int [,] array)
+void Print2DArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for(int i=0; i<array.GetLength(0); i++)
-        {
-            for(int j=0; j<array.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
+            if (array[i, j] < 10)
             {
-            Console.Write($"{array[ i, j]} ");
+                Console.Write($"0{array[i, j]} ");
             }
-         Console.WriteLine();
-        }
+            else
+            {
+                Console.Write($"{array[i, j]} ");
+            }
+        Console.WriteLine();
     }
+}
 
 
-    int [,] CreateRandom2DArray(int rowsNumber, int  countColums)
+int[,] CreateRandom2DArray(int rowsNumber, int countColums)
+{
+    Random random = new Random();
+
+    int[,] array = new int[rowsNumber, countColums];
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        Random random = new Random();
-        
-        int [,] array = new int [rowsNumber,countColums];
-        for(int i=0; i<array.GetLength(0); i++)
-        {
-            for(int j=0; j<array.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
 
-            {
-                array[i,j] = random.Next(1,11);
-                //sum = sum+array[i,j];
-            }
-             //Console.WriteLi(sum);
-   
+        {
+            array[i, j] = random.Next(1, 30);
+
         }
-        return  array;
+
+
     }
+    return array;
+}
 
 
 int InputNumber()
@@ -91,6 +96,6 @@ int InputNumber()
     {
         Console.Write("Ошибка ввода! Введите целое число ");
     }
-    return(rowsNumber);
+    return (rowsNumber);
 }
 
