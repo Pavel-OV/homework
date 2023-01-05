@@ -26,7 +26,7 @@ int [,,] array3D = new int [rowsNumber,countColums,verticalColumn];
                     }
             }
         }
-/
+
 Console.WriteLine();
 
 

@@ -42,15 +42,15 @@ public static class Class1
     }
 
 }
-void Main()
-  {
-   int[] array = {5,3,4,9,7,2,1,8,6 };
-   BubbleSort(array);
-   foreach (int e in array)
-    Console.Write(e);
- 
-   Console.ReadKey();
-   }
+// void Main()
+//   {
+//    int[] array = {5,3,4,9,7,2,1,8,6 };
+//    BubbleSort(array);
+//    foreach (int e in array)
+//     Console.Write(e);
+//  
+//    Console.ReadKey();
+//    }
 
 // Кортеж
 // (int,int) GetSomethinq()                               

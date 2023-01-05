@@ -4,116 +4,41 @@
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
-int number = 1;
+
 int rowsNumber= InputNumber();
 int columsNumber=rowsNumber;
 //int [,] array = CreateRandom2DArray(rowsNumber,columsNumber);
-int[,] array = new int[4,4];
-//for(int i=0; i<array.GetLength(0); i++)
-// for(int i=1; i<=number; i++)
-//             {
+int[,] spiral = new int[rowsNumber,columsNumber];
 
-//     for(int j=0; j<array.GetLength(0); j++)
-//     {
-//             for(int a =0; a<array.GetLength(1); a++)
-//              {
-//                 array[j,a]=i;
-//                 // Console.Write(i);
-//             }
-
-//     }
-
-// }
-   
+int number = 1;
+int rows =0;
+int colums =0;
 
 
-Print2DArray(array);
+while (number <= spiral.GetLength(0)*spiral.GetLongLength(1))
+{
+    spiral[rows,colums]=number;
+    if (rows<colums && rows+colums<spiral.GetLength(0)-1) colums ++;
+    if
+}
 
-// int [,] CreateRandom2DArray(int rowsNumber, int  columsNumber)
-//     {
-//         Random random = new Random();
-//         int [,] array = new int [rowsNumber,columsNumber];
-//         for(int i=0; i<array.GetLength(0); i++)
-//         {
-//             for(int j=0; j<array.GetLength(1); j++)
-//             {
-//                 array[i,j] = random.Next(0,30);
-                
-//             }
-   
-//         }
-//         return  array;
-//     }
+Print2DArray(spiral);
 
-
-
-
-
- void Print2DArray(int [,] array)
+void Print2DArray(int [,] array)
     {
-        for(int i=0; i<array.GetLength(0)-3; i++)
+        for(int i=0; i<array.GetLength(0); i++)
         {
             for(int j=0; j<array.GetLength(1); j++)
             {
-                array[i,j]=number;
-
-                Console.Write($"{array[ i, j]} ");
-                number=number+1; 
+            Console.Write($"{array[ i, j]} ");
             }
-             Console.WriteLine();
-       
-        
-            for(int q=3; q<array.GetLength(0) ; q++)
-            {
-                for(int j=array.GetLength(1)-1; j>=0; j--)
-                {
-                    array[j,q]=number;
-
-                    Console.Write($"{array[ i, j]} ");
-                    number=number+1; 
-                }
-                Console.WriteLine();
-       
+         Console.WriteLine();
         }
-        
-    //     for(int i=3; i<array.GetLength(0) ; i++)
-    //     {
-    //         for(int j=array.GetLength(1)-1; j>=0; j--)
-    //         {
-    //             array[j,i]=number;
+    }
 
-    //             Console.Write($"{array[ i, j]} ");
-    //             number=number+1; 
-    //         }
-    //          Console.WriteLine();
-       
-    //     }
-    //     for(int i=0; i<array.GetLength(0) ; i++)
-    //     {
-    //         for(int j=array.GetLength(1)-1; j>=0; j--)
-    //         {
-    //             array[j,i]=number;
 
-    //             Console.Write($"{array[ i, j]} ");
-    //             number=number+1; 
-    //         }
-    //          Console.WriteLine();
-       
-    //     }
-    //     //  for(int i=4; i<array.GetLength(0); i++)
-    //     // {
-    //     //     for(int j=array.GetLength(1)-1; j >= 0; j--)
-    //     //     {
-    //     //         array[i,j]=number;
 
-    //     //         Console.Write($"{array[ i, j]} ");
-    //     //         number=number+1;
-    //     //     }
-    //     //      Console.WriteLine();
-       
-        }
-        
-     }
+
 
   int InputNumber()
 {
