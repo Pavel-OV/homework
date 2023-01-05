@@ -5,30 +5,30 @@
 // 11 16 15 06
 // 10 09 08 07
 
-int rowsNumber = InputNumber();
-int columsNumber = rowsNumber;
+// int rowsNumber = InputNumber();
+// int columsNumber = rowsNumber;
 //int [,] array = CreateRandom2DArray(rowsNumber,columsNumber);
-int[,] spiral = new int[rowsNumber, columsNumber];
-
+int n=4;
+int [,] zmey = new int[n,n];
 int number = 1;
 int rows = 0;
 int colums = 0;
 
 
-while (number <= spiral.GetLength(0) * spiral.GetLongLength(1))
+while (number <= zmey.GetLength(0) * zmey.GetLongLength(1))
 {
-    spiral[rows, colums] = number;
-    if (rows <= colums + 1 && rows + colums < spiral.GetLength(0) - 1)
+    zmey[rows, colums] = number;
+    if (rows <= colums+1 && rows + colums < zmey.GetLength(1) - 1)
     {
-        colums++;
+        colums = colums + 1;
     }
-    else if (rows > colums && rows + colums < spiral.GetLength(1) - 1)
+    else if (rows < colums && rows + colums < zmey.GetLength(0) - 1)
     {
         rows = rows + 1;
     }
-    else if (rows >= colums && rows + colums < spiral.GetLength(0) - 1)
+    else if (rows >= colums && rows + colums < zmey.GetLength(1) - 1)
     {
-        colums--;
+        colums = colums - 1;
     }
     else
 
@@ -40,7 +40,7 @@ while (number <= spiral.GetLength(0) * spiral.GetLongLength(1))
     number = number + 1;
 }
 
-Print2DArray(spiral);
+Print2DArray(zmey);
 
 void Print2DArray(int[,] array)
 {
@@ -58,12 +58,12 @@ void Print2DArray(int[,] array)
 
 
 
-int InputNumber()
-{
-    Console.Write("Введите  число ");
-    while (!int.TryParse(Console.ReadLine(), out rowsNumber))
-    {
-        Console.Write("Ошибка ввода! Введите целое число ");
-    }
-    return (rowsNumber);
-}
+// int InputNumber()
+// {
+//     Console.Write("Введите  число ");
+//     while (!int.TryParse(Console.ReadLine(), out rowsNumber))
+//     {
+//         Console.Write("Ошибка ввода! Введите целое число ");
+//     }
+//     return (rowsNumber);
+// }
